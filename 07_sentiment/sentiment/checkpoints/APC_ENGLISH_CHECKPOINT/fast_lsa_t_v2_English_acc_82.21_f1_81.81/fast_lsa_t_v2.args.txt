@@ -1,0 +1,48 @@
+model: <class 'pyabsa.tasks.AspectPolarityClassification.models.__lcf__.fast_lsa_t_v2.FAST_LSA_T_V2'>
+optimizer: adamw
+learning_rate: 2e-05
+cache_dataset: False
+warmup_step: -1
+max_seq_len: 256
+patience: 99999
+SRD: 3
+lcf: cdw
+window: lr
+eta: -1
+dropout: 0
+l2reg: 1e-08
+num_epoch: 20
+batch_size: 16
+seed: 4133
+output_dim: 3
+log_step: 2234
+dynamic_truncate: True
+evaluate_begin: 0
+similarity_threshold: 1
+cross_validate_fold: -1
+use_amp: False
+pretrained_bert: microsoft/deberta-v3-base
+dataset: ['113.Laptop14', '114.Restaurant14', '116.Restaurant16', '101.ACL_Twitter', '109.MAMS', '117.Television', '118.TShirt', '119.Yelp', '121.MOOC_En', '129.Kaggle']
+from_checkpoint: 
+checkpoint_save_mode: 1
+auto_device: True
+path_to_save: None
+load_aug: False
+device: cuda:0
+device_name: NVIDIA GeForce RTX 3090
+model_name: fast_lsa_t_v2
+embed_dim: 768
+PyABSAVersion: 2.0.0
+TransformersVersion: 4.24.0
+TorchVersion: 1.13.0a0+git2e883d4+cuda11.2
+dataset_name: English
+save_mode: 1
+logger: <Logger fast_lsa_t_v2 (INFO)>
+task_code: APC
+dataset_file: {'train': ['integrated_datasets/apc_datasets/110.SemEval/113.laptop14/Laptops_Train.xml.seg', 'integrated_datasets/apc_datasets/110.SemEval/114.restaurant14/Restaurants_Train.xml.seg', 'integrated_datasets/apc_datasets/110.SemEval/116.restaurant16/restaurant_train.raw', 'integrated_datasets/apc_datasets/101.ACL_Twitter/acl-14-short-data/train.raw', 'integrated_datasets/apc_datasets/109.MAMS/train.xml.dat', 'integrated_datasets/apc_datasets/117.Television/Television_Train.xml.seg', 'integrated_datasets/apc_datasets/118.TShirt/Menstshirt_Train.xml.seg', 'integrated_datasets/apc_datasets/119.Yelp/yelp.train.txt', 'integrated_datasets/apc_datasets/121.MOOC_En/mooc-en.train.txt', 'integrated_datasets/apc_datasets/129.Kaggle/train.csv.dat'], 'test': ['integrated_datasets/apc_datasets/110.SemEval/113.laptop14/Laptops_Test_Gold.xml.seg', 'integrated_datasets/apc_datasets/110.SemEval/114.restaurant14/Restaurants_Test_Gold.xml.seg', 'integrated_datasets/apc_datasets/110.SemEval/116.restaurant16/restaurant_test.raw', 'integrated_datasets/apc_datasets/101.ACL_Twitter/acl-14-short-data/test.raw', 'integrated_datasets/apc_datasets/109.MAMS/test.xml.dat', 'integrated_datasets/apc_datasets/117.Television/Television_Test_Gold.xml.seg', 'integrated_datasets/apc_datasets/118.TShirt/Menstshirt_Test_Gold.xml.seg', 'integrated_datasets/apc_datasets/119.Yelp/yelp.test.txt', 'integrated_datasets/apc_datasets/121.MOOC_En/mooc-en.test.txt', 'integrated_datasets/apc_datasets/129.Kaggle/test.csv.dat'], 'valid': ['integrated_datasets/apc_datasets/109.MAMS/valid.xml.dat']}
+model_path_to_save: checkpoints
+inputs_cols: ['lcf_cdm_vec', 'lcf_cdw_vec', 'left_lcf_cdm_vec', 'left_lcf_cdw_vec', 'right_lcf_cdm_vec', 'right_lcf_cdw_vec', 'spc_mask_vec', 'text_indices']
+spacy_model: en_core_web_sm
+index_to_label: {0: 'Negative', 1: 'Neutral', 2: 'Positive'}
+metrics_of_this_checkpoint: {'acc': 0.8220720720720721, 'f1': 0.818078070818763}
+max_test_metrics: {'max_apc_test_acc': 0.8220720720720721, 'max_apc_test_f1': 0.818078070818763}

@@ -1,0 +1,12 @@
+iframe {
+    width: 100%;
+    text-align: left;
+    border: none;
+}
+
+button {
+    font-size: 300%;
+    border: none;
+    background: none;
+    margin-right: 0.25em;
+}

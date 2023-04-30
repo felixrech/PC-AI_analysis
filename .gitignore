@@ -1,0 +1,18 @@
+# Generally unnecessary to track
+**/venv
+**/.vscode
+**/__pycache__
+**/.ipynb_checkpoints
+
+# Some local files that we don't need to track
+00_initial/
+02_eval_tool/log.txt
+02_eval_tool/assets/attachments
+02_eval_tool/evaluations
+06_explorer/explorer/assets/attachments
+06_explorer/explorer/.gitignore
+07_sentiment/.gitignore
+
+# Ignore dataset for now
+7639546_requirements_for_artificial_intelligence/
+24212003_requirements_for_artificial_intelligence/

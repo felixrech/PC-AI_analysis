@@ -1,0 +1,30 @@
+/* Adapted from: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Realizing_common_layouts_using_CSS_Grid_Layout */
+.content {
+    grid-area: content;
+}
+
+
+.side {
+    grid-area: sidebar;
+}
+
+
+.wrapper {
+    display: grid;
+    gap: 20px;
+    grid-template-areas:
+        "content"
+        "sidebar";
+}
+
+@media (min-width: 700px) {
+    .wrapper {
+        grid-template-columns: 5fr 4fr;
+        grid-template-areas:
+            "content sidebar";
+    }
+
+    iframe {
+        height: 95vh;
+    }
+}

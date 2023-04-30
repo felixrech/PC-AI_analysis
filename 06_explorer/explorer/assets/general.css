@@ -1,0 +1,293 @@
+/* >>>>>>>>>>>>>>>>>>>>>>>>>>>> WHOLE PAGES <<<<<<<<<<<<<<<<<<<<<<<<<<<< */
+/* Style whole page */
+:root {
+    --monospace-font: "Courier New";
+    --color-card-bg: #303030;
+
+    /* Increase default font-size: https://bootstrapcreative.com/bootstrap-text-sizes/ */
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+/* Div that the whole page lives in */
+.container {
+    position: absolute;
+    padding: 0;
+}
+
+
+/* >>>>>>>>>>>>>>>>>>>>>>>>>>>> DASH COMPONENTS <<<<<<<<<<<<<<<<<<<<<<<<<<<< */
+/* Tables and components */
+table,
+th,
+td {
+    border: 1px solid;
+    border-collapse: collapse;
+}
+
+/* dcc.Table */
+.table {
+    margin-bottom: 0;
+}
+
+/* dbc.Row - avoid page being too large */
+.row {
+    margin-right: 0;
+}
+
+/* >>>>>>>>>>>>>>>>>>>>>>>>>>>> CUSTOM LAYOUTS <<<<<<<<<<<<<<<<<<<<<<<<<<<< */
+/* Flex centering */
+.flex_center {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    margin: 0;
+    justify-content: center;
+}
+
+/* Right aligning within dbc.Cols */
+.flex_right_align {
+    display: flex;
+    justify-content: end;
+}
+
+/* Float left/right aligning */
+.float_left {
+    float: left;
+}
+
+.float_right {
+    float: right;
+}
+
+/* Hidden element */
+.v-h {
+    visibility: hidden;
+}
+
+/* Very small margin left and right */
+.mm {
+    margin-right: 0.05cm;
+    margin-left: 0.05cm;
+}
+
+/* Small margin */
+.mm-a {
+    margin: 0.1cm;
+}
+
+/* Large margin */
+.mm-a-lg {
+    margin: 0.5cm;
+}
+
+/* Fixed full width but including medium margin */
+.fw-m2 {
+    width: calc(100vw - 0.4cm);
+    margin: 0.2cm;
+}
+
+/* Percentage full width but including small-ish margin */
+.fwp-m1 {
+    width: calc(100% - 0.2cm);
+    margin: 0.1cm;
+}
+
+/* Fixed maximum width of 15 cm */
+.mw-15 {
+    max-width: 15cm;
+}
+
+/* Fixed maximum width of 15 cm */
+.mw-30 {
+    max-width: 30cm;
+}
+
+/* Fit width though limited to 10cm */
+.fw-10 {
+    width: 100%;
+    max-width: 10cm;
+}
+
+/* Smaller font size (relative) */
+.fs-sm {
+    font-size: smaller;
+}
+
+/* Larger font size (relative) */
+.fs-lg {
+    font-size: larger;
+}
+
+/* Left-align text */
+.text-left {
+    text-align: start;
+}
+
+
+/* >>>>>>>>>>>>>>>>>>>>>>>>>>>> CUSTOM COMPONENTS <<<<<<<<<<<<<<<<<<<<<<<<<<<< */
+/* /pdf page */
+.iframe_overlay {
+    transition: 0.3s;
+    position: fixed;
+    bottom: 35px;
+    right: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10002;
+    background-color: var(--bs-info);
+    border-radius: 100%;
+    width: 64px;
+    height: 64px;
+}
+
+/* Hint accordion: Large enough but not too large*/
+.hint_accordion {
+    width: max(60%, min(calc(100% - 0.5cm), 30cm))
+}
+
+/* Hint accordion: Add some padding */
+.hint_accordion .accordion-button {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+
+/* dcc.Dropdown */
+.dash-dropdown {
+    /* Inherited centering breaks dropdown value layout */
+    text-align: left;
+}
+
+/* dcc.Dropdown: Labels - allow for proper alignment */
+.VirtualizedSelectOption {
+    font-family: var(--monospace-font);
+    white-space: pre !important;
+}
+
+/* dcc.Dropdown: Match bootstrap theme */
+.Select-menu-outer,
+.Select-control,
+.Select-multi-value-wrapper,
+.Select-arrow-zone,
+#react-select-2--value-item,
+.Select-input>input:nth-child(1) {
+    color: white;
+    background: var(--bs-primary);
+    background-color: var(--bs-primary);
+}
+
+
+/* LDAvis's iframe */
+.lda_iframe {
+    /* Match LDAvis size */
+    height: 770px;
+    width: 1280px;
+
+    /* Center horizontally */
+    margin: 0.5cm auto;
+    display: block;
+}
+
+.accordion_buttonize .collapsed {
+    background-color: var(--bs-primary);
+}
+
+
+/* Custom accordion: Same color as (primary) buttons */
+.accordion_highlighted .collapsed {
+    background-color: var(--bs-primary);
+}
+
+/* Custom accordion: no strange content padding */
+.accordion_highlighted>div>div {
+    padding: 0px;
+}
+
+/* Custom accordion: no outline on click */
+.accordion_highlighted button:focus:not(:focus-visible) {
+    box-shadow: none;
+}
+
+/* Custom accordion: item labels */
+.accordion_highlighted>h2>button {
+    /* Allow for proper alignment */
+    font-family: var(--monospace-font);
+    font-size: 18px;
+    white-space: pre !important;
+
+    /* Deal with text overflow */
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Custom accordion: text content */
+.accordion_highlighted .text {
+    padding: 0.2cm;
+    background-color: var(--color-card-bg);
+}
+
+/* Custom accordion: match information buttons to accordion button */
+.accordion_info_buttons {
+    padding: 0.1cm;
+    padding-right: 0.5cm;
+    padding-left: 0.5cm;
+    background-color: white;
+    border-bottom-left-radius: calc(.25rem - 1px);
+    border-bottom-right-radius: calc(.25rem - 1px);
+}
+
+
+/* Navigation bar: No extra space around horizontal line */
+.navbar-nav hr {
+    margin: 0;
+}
+
+
+/* Triangle button: theming */
+.triangle_button {
+    padding-left: 0px;
+    background-color: var(--bs-body-bg);
+    border-color: var(--bs-body-bg);
+    --bs-btn-hover-bg: var(--bs-body-bg);
+    --bs-btn-hover-border-color: var(--bs-body-bg);
+}
+
+/* Triangle button: content */
+.triangle_button>div {
+    border-style: solid;
+    border-color: transparent transparent transparent #375a7f;
+    border-width: 1.25rem 0 1.25rem 1rem;
+}
+
+
+/* (Partially) Not Rounded button badges */
+.nr-r {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    padding-right: 0.35em;
+}
+
+.nr-l {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    padding-left: 0.35em;
+}
+
+
+/* Invisible button */
+.button_invisible,
+.button_invisible:hover {
+    margin: 0px;
+    padding: 0px;
+    background-color: var(--bs-body-bg);
+    border-color: var(--bs-body-bg);
+}
+
+/* Modal footer with less padding */
+.mf-lp {
+    padding: 0;
+    padding-top: 0.1cm;
+    padding-right: 1cm;
+}
